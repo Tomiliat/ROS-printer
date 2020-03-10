@@ -1,0 +1,2 @@
+printer
+-DCATKIN_DEVEL_PREFIX=/home/tomiliatsereh/printertool/devel -DCMAKE_INSTALL_PREFIX=/home/tomiliatsereh/printertool/install -G Unix Makefiles
