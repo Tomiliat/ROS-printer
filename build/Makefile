@@ -363,6 +363,19 @@ roscpp_generate_messages_cpp/fast:
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named printer_printertool
+
+# Build rule for target.
+printer_printertool: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 printer_printertool
+.PHONY : printer_printertool
+
+# fast build rule for target.
+printer_printertool/fast:
+	$(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/build
+.PHONY : printer_printertool/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -507,6 +520,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... printer_printertool"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_cpp"

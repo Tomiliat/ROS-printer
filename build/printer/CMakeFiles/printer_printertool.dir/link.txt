@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/printer_printertool.dir/src/printertool.cpp.o CMakeFiles/printer_printertool.dir/src/mySerial.cpp.o  -o /home/tomiliatsereh/printertool/devel/lib/printer/printer_printertool 

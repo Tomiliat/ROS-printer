@@ -91,6 +91,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -123,17 +134,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -256,6 +256,21 @@ roscpp_generate_messages_cpp: printer/CMakeFiles/roscpp_generate_messages_cpp.di
 roscpp_generate_messages_cpp/fast:
 	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make printer/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+printer/CMakeFiles/printer_printertool.dir/rule:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f CMakeFiles/Makefile2 printer/CMakeFiles/printer_printertool.dir/rule
+.PHONY : printer/CMakeFiles/printer_printertool.dir/rule
+
+# Convenience name for target.
+printer_printertool: printer/CMakeFiles/printer_printertool.dir/rule
+
+.PHONY : printer_printertool
+
+# fast build rule for target.
+printer_printertool/fast:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/build
+.PHONY : printer_printertool/fast
 
 # Convenience name for target.
 printer/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
@@ -392,6 +407,60 @@ std_msgs_generate_messages_py/fast:
 	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/std_msgs_generate_messages_py.dir/build.make printer/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+src/mySerial.o: src/mySerial.cpp.o
+
+.PHONY : src/mySerial.o
+
+# target to build an object file
+src/mySerial.cpp.o:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/mySerial.cpp.o
+.PHONY : src/mySerial.cpp.o
+
+src/mySerial.i: src/mySerial.cpp.i
+
+.PHONY : src/mySerial.i
+
+# target to preprocess a source file
+src/mySerial.cpp.i:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/mySerial.cpp.i
+.PHONY : src/mySerial.cpp.i
+
+src/mySerial.s: src/mySerial.cpp.s
+
+.PHONY : src/mySerial.s
+
+# target to generate assembly for a file
+src/mySerial.cpp.s:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/mySerial.cpp.s
+.PHONY : src/mySerial.cpp.s
+
+src/printertool.o: src/printertool.cpp.o
+
+.PHONY : src/printertool.o
+
+# target to build an object file
+src/printertool.cpp.o:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/printertool.cpp.o
+.PHONY : src/printertool.cpp.o
+
+src/printertool.i: src/printertool.cpp.i
+
+.PHONY : src/printertool.i
+
+# target to preprocess a source file
+src/printertool.cpp.i:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/printertool.cpp.i
+.PHONY : src/printertool.cpp.i
+
+src/printertool.s: src/printertool.cpp.s
+
+.PHONY : src/printertool.s
+
+# target to generate assembly for a file
+src/printertool.cpp.s:
+	cd /home/tomiliatsereh/printertool/build && $(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/src/printertool.cpp.s
+.PHONY : src/printertool.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -401,6 +470,7 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_eus"
@@ -409,6 +479,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... printer_printertool"
 	@echo "... install"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
@@ -419,7 +490,12 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... test"
+	@echo "... src/mySerial.o"
+	@echo "... src/mySerial.i"
+	@echo "... src/mySerial.s"
+	@echo "... src/printertool.o"
+	@echo "... src/printertool.i"
+	@echo "... src/printertool.s"
 .PHONY : help
 
 

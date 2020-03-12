@@ -9,5 +9,6 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/tomiliatsereh/printertool/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/tomiliatsereh/printertool/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/tomiliatsereh/printertool/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/tomiliatsereh/printertool/build"
 export ROS_PACKAGE_PATH="/home/tomiliatsereh/printertool/src:$ROS_PACKAGE_PATH"

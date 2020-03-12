@@ -408,7 +408,7 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory printer
 
 # Convenience name for "all" pass in the directory.
-printer/all:
+printer/all: printer/CMakeFiles/printer_printertool.dir/all
 
 .PHONY : printer/all
 
@@ -419,6 +419,7 @@ printer/clean: printer/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 printer/clean: printer/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 printer/clean: printer/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 printer/clean: printer/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+printer/clean: printer/CMakeFiles/printer_printertool.dir/clean
 printer/clean: printer/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 printer/clean: printer/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
 printer/clean: printer/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
@@ -625,6 +626,43 @@ printer/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
 
 # clean rule for target.
 clean: printer/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target printer/CMakeFiles/printer_printertool.dir
+
+# All Build rule for target.
+printer/CMakeFiles/printer_printertool.dir/all:
+	$(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/depend
+	$(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tomiliatsereh/printertool/build/CMakeFiles --progress-num=12,13,14 "Built target printer_printertool"
+.PHONY : printer/CMakeFiles/printer_printertool.dir/all
+
+# Include target in all.
+all: printer/CMakeFiles/printer_printertool.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+printer/CMakeFiles/printer_printertool.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tomiliatsereh/printertool/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 printer/CMakeFiles/printer_printertool.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tomiliatsereh/printertool/build/CMakeFiles 0
+.PHONY : printer/CMakeFiles/printer_printertool.dir/rule
+
+# Convenience name for target.
+printer_printertool: printer/CMakeFiles/printer_printertool.dir/rule
+
+.PHONY : printer_printertool
+
+# clean rule for target.
+printer/CMakeFiles/printer_printertool.dir/clean:
+	$(MAKE) -f printer/CMakeFiles/printer_printertool.dir/build.make printer/CMakeFiles/printer_printertool.dir/clean
+.PHONY : printer/CMakeFiles/printer_printertool.dir/clean
+
+# clean rule for target.
+clean: printer/CMakeFiles/printer_printertool.dir/clean
 
 .PHONY : clean
 
