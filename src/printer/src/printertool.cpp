@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     */
 
     // UNCOMMENT THIS, IF you want to ask user for path and filename.
-    
+    /*
     std::cout << "Enter full path: ";
     std::getline(std::cin, path);
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     std::getline(std::cin, filename);
     
     read.open(path + filename);
-    
+    */
 
 
     if (read.is_open())
